@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+
+    <style>
+        body {
+            background-color: purple;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        input {
+            margin: 5px;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        input[type="button"] {
+            background-color: white;
+            color: purple;
+            cursor: pointer;
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Vamos calcular seu IMC!</h1>
+
+    <input type="number" id="peso" placeholder="Digite seu peso em KG">
+    <input type="number" id="altura" placeholder="Digite sua altura em M">
+    <input type="button" value="Calcular" onclick="calcularIMC()">
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularIMC() {
+            var peso = Number(document.getElementById("peso").value)
+            var altura = Number(document.getElementById("altura").value)
+            var res = document.getElementById("resultado")
+
+            if (peso <= 0 || altura <= 0) {
+                res.innerHTML = "Digite valores válidos."
+                return
+            }
+
+            var imc = peso / (altura * altura)
+            res.innerHTML = `Seu IMC é: ${imc.toFixed(2)}`
+        }
+    </script>
+</body>
+</html>
