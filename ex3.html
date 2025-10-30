@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar cor de fundo</title>
+
+    <style>
+        body {
+            background-color: #6a0dad;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.5s;
+            color: white;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: white;
+            color: #6a0dad;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Vamos mudar a cor!</h1>
+    <button id="botao" onclick="mudarCor()">Mudar Cor</button>
+
+    <script>
+        var cores = ['#9b59b6', '#8e44ad', '#7d3c98', '#6a0dad', '#af7ac5', '#d2b4de']
+        var botao = document.getElementById("botao")
+
+        function mudarCor() {
+            var indice = parseInt(Math.random() * cores.length)
+            document.body.style.backgroundColor = cores[indice]
+        }
+    </script>
+
+</body>
+</html>
